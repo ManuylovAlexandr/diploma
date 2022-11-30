@@ -1,0 +1,1144 @@
+Prefix: av: <https://ontology/project#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: prop: <https://ontology/project#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: : <https://ontology/project>
+
+
+
+Ontology: <https://ontology/project>
+
+
+AnnotationProperty: owl:versionInfo
+
+    
+AnnotationProperty: prop:Code
+
+    Annotations: 
+        rdfs:label "Code"
+    
+    Domain: 
+        <http://www.w3.org/2000/01/rdf-schema#Literal>
+    
+    Range: 
+        <http://www.w3.org/2001/XMLSchema#string>
+    
+    
+AnnotationProperty: prop:CreatedAt
+
+    Annotations: 
+        rdfs:label "CreatedAt"
+    
+    Domain: 
+        <http://www.w3.org/2000/01/rdf-schema#Literal>
+    
+    Range: 
+        <http://www.w3.org/2001/XMLSchema#long>
+    
+    
+AnnotationProperty: prop:Description
+
+    Annotations: 
+        rdfs:label "Description"
+    
+    Domain: 
+        <http://www.w3.org/2000/01/rdf-schema#Literal>
+    
+    Range: 
+        <http://www.w3.org/2001/XMLSchema#string>
+    
+    
+AnnotationProperty: prop:EquivalenceClass
+
+    Annotations: 
+        rdfs:label "EquivalenceClass"
+    
+    Domain: 
+        <http://www.w3.org/2000/01/rdf-schema#Literal>
+    
+    Range: 
+        <http://www.w3.org/2001/XMLSchema#boolean>
+    
+    
+AnnotationProperty: prop:Query
+
+    Annotations: 
+        rdfs:label "Query"
+    
+    Domain: 
+        <http://www.w3.org/2000/01/rdf-schema#Literal>
+    
+    Range: 
+        <http://www.w3.org/2001/XMLSchema#string>
+    
+    
+AnnotationProperty: prop:Synonym
+
+    Annotations: 
+        rdfs:label "Synonym"
+    
+    Domain: 
+        <http://www.w3.org/2000/01/rdf-schema#Literal>
+    
+    Range: 
+        <http://www.w3.org/2001/XMLSchema#string>
+    
+    
+AnnotationProperty: rdfs:label
+
+    
+Datatype: xsd:long
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: prop:hasComponent
+
+    Annotations: 
+        rdfs:label "hasComponent"
+    
+    Domain: 
+        prop:TreatmentOption
+    
+    Range: 
+        prop:ArtifactClass or prop:TreatmentOption
+    
+    
+Class: prop:ArtifactClass
+
+    Annotations: 
+        rdfs:label "Classification"
+    
+    SubClassOf: 
+        prop:Therapy
+    
+    
+Class: prop:ArtifactType
+
+    Annotations: 
+        rdfs:label "ArtifactType"
+    
+    
+Class: prop:System
+
+    Annotations: 
+        rdfs:label "System",
+        owl:versionInfo "V2022_02_28_4__Init_object_properties"
+    
+    
+Class: prop:TQ
+
+    Annotations: 
+        rdfs:label "Term query"
+    
+    
+Class: prop:Therapy
+
+    Annotations: 
+        rdfs:label "Therapy"
+    
+    
+Class: prop:TreatmentOption
+
+    Annotations: 
+        rdfs:label "TreatmentOption"
+    
+    SubClassOf: 
+        prop:Therapy
+    
+    
+Class: prop:UnclassifiedDrugs
+
+    Annotations: 
+        rdfs:label "Unclassified",
+        prop:Code "UnclassifiedDrugs"
+    
+    SubClassOf: 
+        prop:therapy_tree
+    
+    
+Class: prop:UnclassifiedPlacebos
+
+    Annotations: 
+        rdfs:label "Unclassified",
+        prop:Code "UnclassifiedPlacebos"
+    
+    SubClassOf: 
+        prop:placebo_tree
+    
+    
+Class: prop:UnclassifiedRadioTherapies
+
+    Annotations: 
+        rdfs:label "Unclassified",
+        prop:Code "UnclassifiedRadioTherapies"
+    
+    SubClassOf: 
+        prop:radiotherapy_tree
+    
+    
+Class: prop:UnclassifiedSurgeries
+
+    Annotations: 
+        rdfs:label "Unclassified",
+        prop:Code "UnclassifiedSurgeries"
+    
+    SubClassOf: 
+        prop:surgery_tree
+    
+    
+Class: prop:drug_1
+
+    Annotations: 
+        rdfs:label "drug 1",
+        owl:versionInfo "67"^^xsd:long,
+        prop:Code "drug_1",
+        prop:CreatedAt "1668458095"^^xsd:long,
+        prop:Synonym "synonym drug 1"
+    
+    SubClassOf: 
+        prop:therapy_tree
+    
+    
+Class: prop:drug_10
+
+    Annotations: 
+        rdfs:label "drug 10",
+        owl:versionInfo "10"^^xsd:long,
+        prop:Code "drug_10",
+        prop:CreatedAt "1668458495"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedDrugs
+    
+    
+Class: prop:drug_11
+
+    Annotations: 
+        rdfs:label "drug 11",
+        owl:versionInfo "11"^^xsd:long,
+        prop:Code "drug_11",
+        prop:CreatedAt "1668458499"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedDrugs
+    
+    
+Class: prop:drug_12
+
+    Annotations: 
+        rdfs:label "drug 12",
+        owl:versionInfo "12"^^xsd:long,
+        prop:Code "drug_12",
+        prop:CreatedAt "1668458503"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedDrugs
+    
+    
+Class: prop:drug_13
+
+    Annotations: 
+        rdfs:label "drug 13",
+        owl:versionInfo "13"^^xsd:long,
+        prop:Code "drug_13",
+        prop:CreatedAt "1668458506"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedDrugs
+    
+    
+Class: prop:drug_14
+
+    Annotations: 
+        rdfs:label "drug 14",
+        owl:versionInfo "14"^^xsd:long,
+        prop:Code "drug_14",
+        prop:CreatedAt "1668458510"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedDrugs
+    
+    
+Class: prop:drug_15
+
+    Annotations: 
+        rdfs:label "drug 15",
+        owl:versionInfo "15"^^xsd:long,
+        prop:Code "drug_15",
+        prop:CreatedAt "1668458513"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedDrugs
+    
+    
+Class: prop:drug_16
+
+    Annotations: 
+        rdfs:label "drug 16",
+        owl:versionInfo "16"^^xsd:long,
+        prop:Code "drug_16",
+        prop:CreatedAt "1668458518"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedDrugs
+    
+    
+Class: prop:drug_17
+
+    Annotations: 
+        rdfs:label "drug 17",
+        owl:versionInfo "17"^^xsd:long,
+        prop:Code "drug_17",
+        prop:CreatedAt "1668458521"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedDrugs
+    
+    
+Class: prop:drug_18
+
+    Annotations: 
+        rdfs:label "drug 18",
+        owl:versionInfo "18"^^xsd:long,
+        prop:Code "drug_18",
+        prop:CreatedAt "1668458528"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedDrugs
+    
+    
+Class: prop:drug_19
+
+    Annotations: 
+        rdfs:label "drug 19",
+        owl:versionInfo "19"^^xsd:long,
+        prop:Code "drug_19",
+        prop:CreatedAt "1668458532"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedDrugs
+    
+    
+Class: prop:drug_2
+
+    Annotations: 
+        rdfs:label "drug 2",
+        owl:versionInfo "68"^^xsd:long,
+        prop:Code "drug_2",
+        prop:CreatedAt "1668458461"^^xsd:long
+    
+    SubClassOf: 
+        prop:therapy_subtree_1
+    
+    
+Class: prop:drug_20
+
+    Annotations: 
+        rdfs:label "drug 20",
+        owl:versionInfo "20"^^xsd:long,
+        prop:Code "drug_20",
+        prop:CreatedAt "1668458536"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedDrugs
+    
+    
+Class: prop:drug_3
+
+    Annotations: 
+        rdfs:label "drug 3",
+        owl:versionInfo "69"^^xsd:long,
+        prop:Code "drug_3",
+        prop:CreatedAt "1668458465"^^xsd:long,
+        prop:Description "Some description"
+    
+    SubClassOf: 
+        prop:therapy_subtree_2
+    
+    
+Class: prop:drug_4
+
+    Annotations: 
+        rdfs:label "drug 4",
+        owl:versionInfo "70"^^xsd:long,
+        prop:Code "drug_4",
+        prop:CreatedAt "1668458469"^^xsd:long,
+        prop:Description "Descr",
+        prop:Synonym "Drug 4 synonym"
+    
+    SubClassOf: 
+        prop:therapy_subtree_1
+    
+    
+Class: prop:drug_5
+
+    Annotations: 
+        rdfs:label "drug 5",
+        owl:versionInfo "71"^^xsd:long,
+        prop:Code "drug_5",
+        prop:CreatedAt "1668458473"^^xsd:long
+    
+    SubClassOf: 
+        prop:therapy_subtree_2
+    
+    
+Class: prop:drug_6
+
+    Annotations: 
+        rdfs:label "drug 6",
+        owl:versionInfo "55"^^xsd:long,
+        prop:Code "drug_6",
+        prop:CreatedAt "1668458477"^^xsd:long
+    
+    SubClassOf: 
+        prop:therapy_subtree_2
+    
+    
+Class: prop:drug_7
+
+    Annotations: 
+        rdfs:label "drug 7",
+        owl:versionInfo "72"^^xsd:long,
+        prop:Code "drug_7",
+        prop:CreatedAt "1668458481"^^xsd:long
+    
+    SubClassOf: 
+        prop:therapy_sub_subtree
+    
+    
+Class: prop:drug_8
+
+    Annotations: 
+        rdfs:label "drug 8",
+        owl:versionInfo "73"^^xsd:long,
+        prop:Code "drug_8",
+        prop:CreatedAt "1668458485"^^xsd:long
+    
+    SubClassOf: 
+        prop:therapy_sub_subtree
+    
+    
+Class: prop:drug_9
+
+    Annotations: 
+        rdfs:label "drug 9",
+        owl:versionInfo "9"^^xsd:long,
+        prop:Code "drug_9",
+        prop:CreatedAt "1668458490"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedDrugs
+    
+    
+Class: prop:placebo_1
+
+    Annotations: 
+        rdfs:label "placebo 1",
+        owl:versionInfo "31"^^xsd:long,
+        prop:Code "placebo_1",
+        prop:CreatedAt "1668458655"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedPlacebos
+    
+    
+Class: prop:placebo_10
+
+    Annotations: 
+        rdfs:label "placebo 10",
+        owl:versionInfo "40"^^xsd:long,
+        prop:Code "placebo_10",
+        prop:CreatedAt "1668458709"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedPlacebos
+    
+    
+Class: prop:placebo_2
+
+    Annotations: 
+        rdfs:label "placebo 2",
+        owl:versionInfo "32"^^xsd:long,
+        prop:Code "placebo_2",
+        prop:CreatedAt "1668458675"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedPlacebos
+    
+    
+Class: prop:placebo_3
+
+    Annotations: 
+        rdfs:label "placebo 3",
+        owl:versionInfo "33"^^xsd:long,
+        prop:Code "placebo_3",
+        prop:CreatedAt "1668458679"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedPlacebos
+    
+    
+Class: prop:placebo_4
+
+    Annotations: 
+        rdfs:label "placebo 4",
+        owl:versionInfo "34"^^xsd:long,
+        prop:Code "placebo_4",
+        prop:CreatedAt "1668458683"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedPlacebos
+    
+    
+Class: prop:placebo_5
+
+    Annotations: 
+        rdfs:label "placebo 5",
+        owl:versionInfo "80"^^xsd:long,
+        prop:Code "placebo_5",
+        prop:CreatedAt "1668458687"^^xsd:long
+    
+    SubClassOf: 
+        prop:placebo_tree
+    
+    
+Class: prop:placebo_6
+
+    Annotations: 
+        rdfs:label "placebo 6",
+        owl:versionInfo "36"^^xsd:long,
+        prop:Code "placebo_6",
+        prop:CreatedAt "1668458692"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedPlacebos
+    
+    
+Class: prop:placebo_7
+
+    Annotations: 
+        rdfs:label "placebo 7",
+        owl:versionInfo "37"^^xsd:long,
+        prop:Code "placebo_7",
+        prop:CreatedAt "1668458696"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedPlacebos
+    
+    
+Class: prop:placebo_8
+
+    Annotations: 
+        rdfs:label "placebo 8",
+        owl:versionInfo "38"^^xsd:long,
+        prop:Code "placebo_8",
+        prop:CreatedAt "1668458700"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedPlacebos
+    
+    
+Class: prop:placebo_9
+
+    Annotations: 
+        rdfs:label "placebo 9",
+        owl:versionInfo "39"^^xsd:long,
+        prop:Code "placebo_9",
+        prop:CreatedAt "1668458704"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedPlacebos
+    
+    
+Class: prop:placebo_tree
+
+    Annotations: 
+        rdfs:label "Placebo",
+        owl:versionInfo "79"^^xsd:long,
+        prop:Code "placebo_tree",
+        prop:CreatedAt "1668459567"^^xsd:long
+    
+    SubClassOf: 
+        prop:ArtifactClass
+    
+    
+Class: prop:radiotherapy_1
+
+    Annotations: 
+        rdfs:label "radiotherapy 1",
+        owl:versionInfo "85"^^xsd:long,
+        prop:Code "radiotherapy_1",
+        prop:CreatedAt "1668458723"^^xsd:long
+    
+    SubClassOf: 
+        prop:radiotherapy_tree
+    
+    
+Class: prop:radiotherapy_10
+
+    Annotations: 
+        rdfs:label "radiotherapy 10",
+        owl:versionInfo "50"^^xsd:long,
+        prop:Code "radiotherapy_10",
+        prop:CreatedAt "1668458776"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedRadioTherapies
+    
+    
+Class: prop:radiotherapy_2
+
+    Annotations: 
+        rdfs:label "radiotherapy 2",
+        owl:versionInfo "86"^^xsd:long,
+        prop:Code "radiotherapy_2",
+        prop:CreatedAt "1668458742"^^xsd:long
+    
+    SubClassOf: 
+        prop:rsub_subtree_1
+    
+    
+Class: prop:radiotherapy_3
+
+    Annotations: 
+        rdfs:label "radiotherapy 3",
+        owl:versionInfo "87"^^xsd:long,
+        prop:Code "radiotherapy_3",
+        prop:CreatedAt "1668458746"^^xsd:long
+    
+    SubClassOf: 
+        prop:rsub_subtree_1
+    
+    
+Class: prop:radiotherapy_4
+
+    Annotations: 
+        rdfs:label "radiotherapy 4",
+        owl:versionInfo "88"^^xsd:long,
+        prop:Code "radiotherapy_4",
+        prop:CreatedAt "1668458750"^^xsd:long
+    
+    SubClassOf: 
+        prop:rsub_subtree_1
+    
+    
+Class: prop:radiotherapy_5
+
+    Annotations: 
+        rdfs:label "radiotherapy 5",
+        owl:versionInfo "89"^^xsd:long,
+        prop:Code "radiotherapy_5",
+        prop:CreatedAt "1668458754"^^xsd:long
+    
+    SubClassOf: 
+        prop:rsub_subtree_2
+    
+    
+Class: prop:radiotherapy_6
+
+    Annotations: 
+        rdfs:label "radiotherapy 6",
+        owl:versionInfo "46"^^xsd:long,
+        prop:Code "radiotherapy_6",
+        prop:CreatedAt "1668458758"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedRadioTherapies
+    
+    
+Class: prop:radiotherapy_7
+
+    Annotations: 
+        rdfs:label "radiotherapy 7",
+        owl:versionInfo "90"^^xsd:long,
+        prop:Code "radiotherapy_7",
+        prop:CreatedAt "1668458763"^^xsd:long
+    
+    SubClassOf: 
+        prop:radiotherapy_subtree
+    
+    
+Class: prop:radiotherapy_8
+
+    Annotations: 
+        rdfs:label "radiotherapy 8",
+        owl:versionInfo "48"^^xsd:long,
+        prop:Code "radiotherapy_8",
+        prop:CreatedAt "1668458767"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedRadioTherapies
+    
+    
+Class: prop:radiotherapy_9
+
+    Annotations: 
+        rdfs:label "radiotherapy 9",
+        owl:versionInfo "49"^^xsd:long,
+        prop:Code "radiotherapy_9",
+        prop:CreatedAt "1668458772"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedRadioTherapies
+    
+    
+Class: prop:radiotherapy_subtree
+
+    Annotations: 
+        rdfs:label "radiotherapy_subtree",
+        owl:versionInfo "82"^^xsd:long,
+        prop:Code "radiotherapy_subtree",
+        prop:CreatedAt "1668459668"^^xsd:long
+    
+    SubClassOf: 
+        prop:radiotherapy_tree
+    
+    
+Class: prop:radiotherapy_tree
+
+    Annotations: 
+        rdfs:label "Radiotherapy",
+        owl:versionInfo "81"^^xsd:long,
+        prop:Code "radiotherapy_tree",
+        prop:CreatedAt "1668459646"^^xsd:long
+    
+    SubClassOf: 
+        prop:ArtifactClass
+    
+    
+Class: prop:rsub_subtree_1
+
+    Annotations: 
+        rdfs:label "rsub_subtree_1",
+        owl:versionInfo "83"^^xsd:long,
+        prop:Code "rsub_subtree_1",
+        prop:CreatedAt "1668459686"^^xsd:long
+    
+    SubClassOf: 
+        prop:radiotherapy_subtree
+    
+    
+Class: prop:rsub_subtree_2
+
+    Annotations: 
+        rdfs:label "rsub_subtree_2",
+        owl:versionInfo "84"^^xsd:long,
+        prop:Code "rsub_subtree_2",
+        prop:CreatedAt "1668459691"^^xsd:long
+    
+    SubClassOf: 
+        prop:radiotherapy_subtree
+    
+    
+Class: prop:surgery_1
+
+    Annotations: 
+        rdfs:label "surgery 1",
+        owl:versionInfo "61"^^xsd:long,
+        prop:Code "surgery_1",
+        prop:CreatedAt "1668458577"^^xsd:long
+    
+    SubClassOf: 
+        prop:surgery_sub_subtree
+    
+    
+Class: prop:surgery_10
+
+    Annotations: 
+        rdfs:label "surgery 10",
+        owl:versionInfo "30"^^xsd:long,
+        prop:Code "surgery_10",
+        prop:CreatedAt "1668458645"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedSurgeries
+    
+    
+Class: prop:surgery_2
+
+    Annotations: 
+        rdfs:label "surgery 2",
+        owl:versionInfo "77"^^xsd:long,
+        prop:Code "surgery_2",
+        prop:CreatedAt "1668458611"^^xsd:long
+    
+    SubClassOf: 
+        prop:surgery_subtree_1
+    
+    
+Class: prop:surgery_3
+
+    Annotations: 
+        rdfs:label "surgery 3",
+        owl:versionInfo "62"^^xsd:long,
+        prop:Code "surgery_3",
+        prop:CreatedAt "1668458616"^^xsd:long
+    
+    SubClassOf: 
+        prop:surgery_subtree_1
+    
+    
+Class: prop:surgery_4
+
+    Annotations: 
+        rdfs:label "surgery 4",
+        owl:versionInfo "63"^^xsd:long,
+        prop:Code "surgery_4",
+        prop:CreatedAt "1668458620"^^xsd:long
+    
+    SubClassOf: 
+        prop:surgery_sub_subtree
+    
+    
+Class: prop:surgery_5
+
+    Annotations: 
+        rdfs:label "surgery 5",
+        owl:versionInfo "78"^^xsd:long,
+        prop:Code "surgery_5",
+        prop:CreatedAt "1668458625"^^xsd:long
+    
+    SubClassOf: 
+        prop:surgery_subtree_2
+    
+    
+Class: prop:surgery_6
+
+    Annotations: 
+        rdfs:label "surgery 6",
+        owl:versionInfo "64"^^xsd:long,
+        prop:Code "surgery_6",
+        prop:CreatedAt "1668458629"^^xsd:long
+    
+    SubClassOf: 
+        prop:surgery_subtree_2
+    
+    
+Class: prop:surgery_7
+
+    Annotations: 
+        rdfs:label "surgery 7",
+        owl:versionInfo "27"^^xsd:long,
+        prop:Code "surgery_7",
+        prop:CreatedAt "1668458633"^^xsd:long
+    
+    SubClassOf: 
+        prop:UnclassifiedSurgeries
+    
+    
+Class: prop:surgery_8
+
+    Annotations: 
+        rdfs:label "surgery 8",
+        owl:versionInfo "66"^^xsd:long,
+        prop:Code "surgery_8",
+        prop:CreatedAt "1668458638"^^xsd:long
+    
+    SubClassOf: 
+        prop:surgery_sub_subtree
+    
+    
+Class: prop:surgery_9
+
+    Annotations: 
+        rdfs:label "surgery 9",
+        owl:versionInfo "65"^^xsd:long,
+        prop:Code "surgery_9",
+        prop:CreatedAt "1668458641"^^xsd:long
+    
+    SubClassOf: 
+        prop:surgery_tree
+    
+    
+Class: prop:surgery_sub_subtree
+
+    Annotations: 
+        rdfs:label "surgery_sub_subtree",
+        owl:versionInfo "76"^^xsd:long,
+        prop:Code "surgery_sub_subtree",
+        prop:CreatedAt "1668459393"^^xsd:long
+    
+    SubClassOf: 
+        prop:surgery_subtree_1
+    
+    
+Class: prop:surgery_subtree_1
+
+    Annotations: 
+        rdfs:label "surgery_subtree_1",
+        owl:versionInfo "74"^^xsd:long,
+        prop:Code "surgery_subtree_1",
+        prop:CreatedAt "1668459355"^^xsd:long
+    
+    SubClassOf: 
+        prop:surgery_tree
+    
+    
+Class: prop:surgery_subtree_2
+
+    Annotations: 
+        rdfs:label "surgery_subtree_2",
+        owl:versionInfo "60"^^xsd:long,
+        prop:Code "surgery_subtree_2",
+        prop:CreatedAt "1668459360"^^xsd:long
+    
+    SubClassOf: 
+        prop:surgery_tree
+    
+    
+Class: prop:surgery_tree
+
+    Annotations: 
+        rdfs:label "Surgery",
+        owl:versionInfo "59"^^xsd:long,
+        prop:Code "surgery_tree",
+        prop:CreatedAt "1668459336"^^xsd:long
+    
+    SubClassOf: 
+        prop:ArtifactClass
+    
+    
+Class: prop:therapy_sub_subtree
+
+    Annotations: 
+        rdfs:label "therapy_sub_subtree",
+        owl:versionInfo "75"^^xsd:long,
+        prop:Code "therapy_sub_subtree",
+        prop:CreatedAt "1668458927"^^xsd:long
+    
+    SubClassOf: 
+        prop:therapy_subtree_1
+    
+    
+Class: prop:therapy_subtree_1
+
+    Annotations: 
+        rdfs:label "therapy_subtree_1",
+        owl:versionInfo "57"^^xsd:long,
+        prop:Code "therapy_subtree_1",
+        prop:CreatedAt "1668458886"^^xsd:long
+    
+    SubClassOf: 
+        prop:therapy_tree
+    
+    
+Class: prop:therapy_subtree_2
+
+    Annotations: 
+        rdfs:label "therapy_subtree_2",
+        owl:versionInfo "58"^^xsd:long,
+        prop:Code "therapy_subtree_2",
+        prop:CreatedAt "1668458891"^^xsd:long
+    
+    SubClassOf: 
+        prop:therapy_tree
+    
+    
+Class: prop:therapy_tree
+
+    Annotations: 
+        rdfs:label "Drug",
+        owl:versionInfo "56"^^xsd:long,
+        prop:Code "therapy_tree",
+        prop:CreatedAt "1668458856"^^xsd:long
+    
+    SubClassOf: 
+        prop:ArtifactClass
+    
+    
+Class: prop:to--drug_13_-plus-_drug_6--etcaxwyg
+
+    Annotations: 
+        rdfs:label "drug 13 + drug 6",
+        owl:versionInfo "92"^^xsd:long,
+        prop:Code "to--drug_13_-plus-_drug_6--etcaxwyg",
+        prop:CreatedAt "1668459913"^^xsd:long
+    
+    SubClassOf: 
+        prop:TreatmentOption,
+        (prop:hasComponent some prop:drug_13)
+         and (prop:hasComponent some prop:drug_6)
+    
+    
+Class: prop:to--drug_1_-plus-_drug_2_-plus-_drug_3--etcixuyh
+
+    Annotations: 
+        rdfs:label "drug 1 + drug 2 + drug 3",
+        owl:versionInfo "100"^^xsd:long,
+        prop:Code "to--drug_1_-plus-_drug_2_-plus-_drug_3--etcixuyh",
+        prop:CreatedAt "1668487094"^^xsd:long
+    
+    SubClassOf: 
+        prop:TreatmentOption,
+        (prop:hasComponent some prop:drug_1)
+         and (prop:hasComponent some prop:drug_2)
+         and (prop:hasComponent some prop:drug_3)
+    
+    
+Class: prop:to--drug_1_-plus-_drug_3_-plus-_drug_5--etcbmoau
+
+    Annotations: 
+        rdfs:label "drug 1 + drug 3 + drug 5",
+        owl:versionInfo "91"^^xsd:long,
+        prop:Code "to--drug_1_-plus-_drug_3_-plus-_drug_5--etcbmoau",
+        prop:CreatedAt "1668459865"^^xsd:long
+    
+    SubClassOf: 
+        prop:TreatmentOption,
+        (prop:hasComponent some prop:drug_1)
+         and (prop:hasComponent some prop:drug_3)
+         and (prop:hasComponent some prop:drug_5)
+    
+    
+Class: prop:to--drug_1_-plus-_drug_3_-plus-_drug_5_-plus-_drug_11--etcooqyn
+
+    Annotations: 
+        rdfs:label "drug 1 + drug 3 + drug 5 + drug 11",
+        owl:versionInfo "93"^^xsd:long,
+        prop:Code "to--drug_1_-plus-_drug_3_-plus-_drug_5_-plus-_drug_11--etcooqyn",
+        prop:CreatedAt "1668459942"^^xsd:long
+    
+    SubClassOf: 
+        prop:TreatmentOption,
+        (prop:hasComponent some prop:drug_11)
+         and (prop:hasComponent some prop:to--drug_1_-plus-_drug_3_-plus-_drug_5--etcbmoau)
+    
+    
+Class: prop:to--drug_2_-plus-_drug_1_-plus-_drug_7--etckswvk
+
+    Annotations: 
+        rdfs:label "drug 2 + drug 1 + drug 7",
+        owl:versionInfo "97"^^xsd:long,
+        prop:Code "to--drug_2_-plus-_drug_1_-plus-_drug_7--etckswvk",
+        prop:CreatedAt "1668460526"^^xsd:long
+    
+    SubClassOf: 
+        prop:TreatmentOption,
+        (prop:hasComponent some prop:drug_1)
+         and (prop:hasComponent some prop:drug_2)
+         and (prop:hasComponent some prop:drug_7)
+    
+    
+Class: prop:to--drug_5_-plus-_surgery_1--etccajsg
+
+    Annotations: 
+        rdfs:label "drug 5 + surgery 1",
+        owl:versionInfo "103"^^xsd:long,
+        prop:Code "to--drug_5_-plus-_surgery_1--etccajsg",
+        prop:CreatedAt "1668487242"^^xsd:long
+    
+    SubClassOf: 
+        prop:TreatmentOption,
+        (prop:hasComponent some prop:drug_5)
+         and (prop:hasComponent some prop:surgery_1)
+    
+    
+Class: prop:to--placebo_3_-plus-_radiotherapy_6_-plus-_drug_7--etcubmpn
+
+    Annotations: 
+        rdfs:label "placebo 3 + radiotherapy 6 + drug 7",
+        owl:versionInfo "96"^^xsd:long,
+        prop:Code "to--placebo_3_-plus-_radiotherapy_6_-plus-_drug_7--etcubmpn",
+        prop:CreatedAt "1668460497"^^xsd:long
+    
+    SubClassOf: 
+        prop:TreatmentOption,
+        (prop:hasComponent some prop:drug_7)
+         and (prop:hasComponent some prop:placebo_3)
+         and (prop:hasComponent some prop:radiotherapy_6)
+    
+    
+Class: prop:to--placebo_3_-plus-_radiotherapy_6_-plus-_drug_7_-plu--etcfqowb
+
+    Annotations: 
+        rdfs:label "placebo 3 + radiotherapy 6 + drug 7 + radiotherapy 10 + drug 10 + placebo 10 + surgery 10",
+        owl:versionInfo "102"^^xsd:long,
+        prop:Code "to--placebo_3_-plus-_radiotherapy_6_-plus-_drug_7_-plu--etcfqowb",
+        prop:CreatedAt "1668487141"^^xsd:long
+    
+    SubClassOf: 
+        prop:TreatmentOption,
+        (prop:hasComponent some prop:to--placebo_3_-plus-_radiotherapy_6_-plus-_drug_7--etcubmpn)
+         and (prop:hasComponent some prop:to--radiotherapy_10_-plus-_drug_10_-plus-_placebo_10_---etcgmmnh)
+    
+    
+Class: prop:to--radiotherapy_10_-plus-_drug_10_-plus-_placebo_10_---etcgmmnh
+
+    Annotations: 
+        rdfs:label "radiotherapy 10 + drug 10 + placebo 10 + surgery 10",
+        owl:versionInfo "98"^^xsd:long,
+        prop:Code "to--radiotherapy_10_-plus-_drug_10_-plus-_placebo_10_---etcgmmnh",
+        prop:CreatedAt "1668487067"^^xsd:long
+    
+    SubClassOf: 
+        prop:TreatmentOption,
+        (prop:hasComponent some prop:drug_10)
+         and (prop:hasComponent some prop:placebo_10)
+         and (prop:hasComponent some prop:radiotherapy_10)
+         and (prop:hasComponent some prop:surgery_10)
+    
+    
+Class: prop:to--radiotherapy_1_-plus-_drug_1--etcaxewg
+
+    Annotations: 
+        rdfs:label "radiotherapy 1 + drug 1",
+        owl:versionInfo "95"^^xsd:long,
+        prop:Code "to--radiotherapy_1_-plus-_drug_1--etcaxewg",
+        prop:CreatedAt "1668460095"^^xsd:long
+    
+    SubClassOf: 
+        prop:TreatmentOption,
+        (prop:hasComponent some prop:drug_1)
+         and (prop:hasComponent some prop:radiotherapy_1)
+    
+    
+Class: prop:to--surgery_3_-plus-_placebo_4--etckvcgq
+
+    Annotations: 
+        rdfs:label "surgery 3 + placebo 4",
+        owl:versionInfo "94"^^xsd:long,
+        prop:Code "to--surgery_3_-plus-_placebo_4--etckvcgq",
+        prop:CreatedAt "1668460075"^^xsd:long
+    
+    SubClassOf: 
+        prop:TreatmentOption,
+        (prop:hasComponent some prop:placebo_4)
+         and (prop:hasComponent some prop:surgery_3)
+    
+    
+Class: prop:to--surgery_3_-plus-_surgery_8--etcrwcpk
+
+    Annotations: 
+        rdfs:label "surgery 3 + surgery 8",
+        owl:versionInfo "101"^^xsd:long,
+        prop:Code "to--surgery_3_-plus-_surgery_8--etcrwcpk",
+        prop:CreatedAt "1668487159"^^xsd:long
+    
+    SubClassOf: 
+        prop:TreatmentOption,
+        (prop:hasComponent some prop:surgery_3)
+         and (prop:hasComponent some prop:surgery_8)
+    
+    
+Class: prop:to--surgery_4_-plus-_radiotherapy_6--etcctxqr
+
+    Annotations: 
+        rdfs:label "surgery 4 + radiotherapy 6",
+        owl:versionInfo "99"^^xsd:long,
+        prop:Code "to--surgery_4_-plus-_radiotherapy_6--etcctxqr",
+        prop:CreatedAt "1668487177"^^xsd:long
+    
+    SubClassOf: 
+        prop:TreatmentOption,
+        (prop:hasComponent some prop:radiotherapy_6)
+         and (prop:hasComponent some prop:surgery_4)
+    
+    
+DisjointClasses: 
+    prop:placebo_tree,prop:radiotherapy_tree,prop:surgery_tree,prop:therapy_tree
+

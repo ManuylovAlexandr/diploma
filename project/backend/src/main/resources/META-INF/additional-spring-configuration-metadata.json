@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "project.semantic-engine.enabled",
+      "type": "java.lang.String",
+      "description": ""
+    }
+  ]
+}

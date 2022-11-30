@@ -1,0 +1,87 @@
+plugins {
+    id "nebula.facet"
+    id "org.springframework.boot"
+}
+
+facets {
+}
+
+dependencies {
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
+
+    implementation "net.javacrumbs.shedlock:shedlock-spring"
+    implementation "net.javacrumbs.shedlock:shedlock-provider-jdbc-template"
+    implementation "net.logstash.logback:logstash-logback-encoder"
+    implementation "org.apache.lucene:lucene-suggest"
+    implementation "org.springframework.boot:spring-boot-starter-aop"
+    implementation "org.springframework.boot:spring-boot-starter-jdbc"
+    implementation "org.springframework.boot:spring-boot-starter-mail"
+    implementation "org.springframework.boot:spring-boot-starter-thymeleaf"
+    implementation "org.springframework.boot:spring-boot-starter-undertow"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+    implementation "org.springframework.data:spring-data-commons"
+    implementation "org.springframework.boot:spring-boot-starter-batch"
+    implementation "org.json:json:20211205"
+    implementation "org.jgrapht:jgrapht-core:1.5.1"
+    implementation "org.apache.poi:poi:5.0.0"
+
+    implementation "net.sourceforge.owlapi:owlapi-distribution:5.1.20"
+    implementation "net.sourceforge.owlapi:org.semanticweb.hermit:1.4.5.519"
+    implementation "net.sf.trove4j:trove4j:3.0.3"
+
+    runtimeOnly "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
+    runtimeOnly "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
+    runtimeOnly "javax.activation:activation"
+    runtimeOnly "net.logstash.logback:logstash-logback-encoder"
+    runtimeOnly "org.glassfish.jaxb:jaxb-runtime"
+    runtimeOnly "org.postgresql:postgresql"
+}
+
+bootRun {
+    customizedEnvironment.each { name, value ->
+        environment name.toString(), value.toString()
+    }
+}
+
+bootBuildImage {
+    builder = "paketobuildpacks/builder:base"
+    environment = [
+            "BPE_DELIM_JAVA_TOOL_OPTIONS" : " ",
+            "BPE_APPEND_JAVA_TOOL_OPTIONS": "--enable-preview"
+    ]
+}
+
+ext {
+    dockerContextDir = "${rootProject.buildDir}/docker"
+}
+
+task copyDependencies(type: Copy, group: "pipeline") {
+    into "$buildDir/dependencies"
+    from configurations.compileClasspath + configurations.runtimeClasspath
+}
+
+task showAppJarSize {
+    dependsOn assemble
+    doLast {
+        final totalSizeMb = jar.archiveFile.get().asFile.length() / 1024 / 1024
+        println "Total jar size: ${String.format("%.2f", totalSizeMb)} MB"
+    }
+}
+
+task copyAppJar(type: Copy) {
+    dependsOn assemble
+    from bootJar.archiveFile.get().asFile
+    into "$dockerContextDir"
+    rename { String fileName -> "project.jar" }
+}
+
+tasks.build {
+    finalizedBy showAppJarSize
+    finalizedBy copyDependencies
+    finalizedBy copyAppJar, copyDependencies
+}
+
+compileJava {
+}

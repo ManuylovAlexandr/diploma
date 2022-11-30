@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+  postgres:
+    image: postgres:11.13
+    environment:
+      POSTGRES_DB: "project_postgres_1"
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    ports:
+      - "5432:5432"

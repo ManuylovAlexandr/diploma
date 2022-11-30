@@ -1,0 +1,84 @@
+plugins {
+    id "io.spring.dependency-management" apply false
+    id "org.jetbrains.gradle.plugin.idea-ext"
+    id "org.openapi.generator" version "5.4.0"
+}
+
+subprojects {
+    apply plugin: "idea"
+    apply plugin: "io.spring.dependency-management"
+    apply plugin: "jacoco"
+    apply plugin: "java"
+    apply plugin: "java-library"
+
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+        }
+        dependencies {
+            dependency "com.fasterxml.jackson.datatype:jackson-datatype-json-org:2.12.5"
+            dependency "com.jayway.jsonpath:json-path:2.6.0"
+            dependency "com.tngtech.archunit:archunit-junit4:0.23.1"
+            dependency "javax.activation:activation:1.1.1"
+            dependencySet(group: "net.javacrumbs.shedlock", version: "4.33.0") {
+                entry "shedlock-spring"
+                entry "shedlock-provider-jdbc-template"
+            }
+            dependency "net.logstash.logback:logstash-logback-encoder:6.6"
+            dependency "org.glassfish.jaxb:jaxb-runtime:2.3.5"
+            dependency "org.yaml:snakeyaml:1.29"
+            dependency "org.apache.lucene:lucene-suggest:8.4.1"
+        }
+    }
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of("${jvmTargetVersion}")
+        }
+        tasks.withType(JavaCompile) {
+            options.encoding = "UTF-8"
+            options.compilerArgs += additionalJavaOpts
+        }
+        tasks.withType(JavaExec) {
+            jvmArgs += additionalJavaOpts
+        }
+    }
+
+    jacoco {
+        toolVersion = "0.8.7"
+    }
+}
+
+allprojects {
+    group = "com"
+}
+
+idea {
+    project.settings {
+        delegateActions {
+            delegateBuildRunToGradle = true
+        }
+    }
+}
+
+final props = new Properties()
+file("$rootDir/.project.env").with { file ->
+    if (file.canRead()) {
+        file.withInputStream { is -> props.load(is) }
+    }
+}
+
+ext {
+    customizedEnvironment = [*: props, *: System.getenv()]
+}
+
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+}
